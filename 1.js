@@ -9,11 +9,13 @@ request.send()
 
 function getcontent2(tags2){
     var ex2 = document.getElementById("example2")
+    
     for (var stag of tags2){
      var newelem = document.createElement(stag.name)
      ex2.appendChild(newelem)
     newelem.classList.add(stag.class)
-    style.appendChild(document.createTextNode(`.${stag.class} { ${stag.style}}`))
+
+    document.getElementsByTagName("style")[0].appendChild(document.createTextNode(`.${stag.class} { ${stag.style}}`))
     
     newelem.innerText = `Кликни на этот ${stag.name}`
         }
